@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Player {
-  id: number;
-  name: string;
-  level: number;
-}
+import { Player } from './player';
 
 // Mock objects
 const PLAYERS: Player[] = [

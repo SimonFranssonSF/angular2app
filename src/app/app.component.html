@@ -17,14 +17,6 @@
     </td>
   </tr>
 </table>
-<div *ngIf="selectedPlayer">
-  <h2>{{selectedPlayer.name}} details!</h2>
-  <div><label>id: </label>{{selectedPlayer.id}}</div>
-  <div>
-      <label>name: </label>
-      <input [(ngModel)]="selectedPlayer.name" placeholder="name"/>
-  </div>
-  <div><label>id: </label>{{selectedPlayer.level}}</div>
-</div>
+<player-detail [player]="selectedPlayer"></player-detail>
 
 
