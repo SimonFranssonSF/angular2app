@@ -1,31 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Player } from './player';
-import { PlayerService } from './player.service';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [PlayerService]
+    selector: 'app-root',
+    template: `
+        <h1>{{ title }}</h1>
+        <a routerLink="/players">Players</a>
+        <router-outlet></router-outlet>`
 })
-export class AppComponent implements OnInit {
-  title = 'Simon\'s player app';
-  players: Player[];
-  selectedPlayer: Player;
-
-  constructor(private playerService: PlayerService) { }
-
-  getPlayers(): void {
-    this.playerService.getPlayers().then(players => this.players = players);   
-  }
-
-  ngOnInit(): void {
-    this.getPlayers();
-  }
-  
-  onSelect(player: Player): void {
-    this.selectedPlayer = player;
-  }
+export class AppComponent {
+    title = 'The Player App';
 }
-
-
